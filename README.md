@@ -1,1 +1,3 @@
-# 2024 2학기 겜프 기말과제
+겜프 기말과제
+
+Assets >>> Simple 2D Platformer BE2
