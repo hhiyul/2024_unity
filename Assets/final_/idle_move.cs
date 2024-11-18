@@ -6,6 +6,7 @@ public class char_move : MonoBehaviour
 {
     // Start is called before the first frame update
     Rigidbody2D rigid2D;
+    Animator animator;
     float jumpForce = 270.0f;
     float walkForce = 6.0f;
     float maxWalkSpeed = 3.0f;
@@ -15,6 +16,7 @@ public class char_move : MonoBehaviour
     void Start()
     {
         this.rigid2D = GetComponent<Rigidbody2D>();
+        this.animator = GetComponent<Animator>();
 
     }
 
