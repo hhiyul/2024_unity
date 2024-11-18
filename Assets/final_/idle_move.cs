@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class char_move : MonoBehaviour
 {
@@ -8,7 +9,7 @@ public class char_move : MonoBehaviour
     Rigidbody2D rigid2D;
     Animator animator;
     float jumpForce = 270.0f;
-    float walkForce = 6.0f;
+    float walkForce = 7.0f;
     float maxWalkSpeed = 3.0f;
 
     int maxJumpCount = 2;
@@ -60,6 +61,11 @@ public class char_move : MonoBehaviour
         {
             transform.localScale = new Vector3(key, 1, 1); // 방향에 따라 캐릭터를 좌우 반전
         }
+        if (transform.position.y < -5)
+        {
+            SceneManager.LoadScene("main"); //SampleScene은 일단 기본게임화면 씬 이름임
+        }
+
     }
     void OnCollisionEnter2D(Collision2D collision)
     {
