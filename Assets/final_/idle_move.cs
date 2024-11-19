@@ -2,35 +2,54 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+
 public class char_move : MonoBehaviour
 {
-
     public string main;
     public string gameover;
-    // Start is called before the first frame update
+
     Rigidbody2D rigid2D;
     Animator animator;
     float jumpForce = 270.0f;
     float walkForce = 7.0f;
     float maxWalkSpeed = 3.0f;
 
-    int maxJumpCount = 2;  //점프 최대횟수 설정
+    int maxJumpCount = 2;
     int jumpCount = 0;
+    bool isInWall = false;
+    bool isGrounded = false;
+
     void Start()
     {
         this.rigid2D = GetComponent<Rigidbody2D>();
         this.animator = GetComponent<Animator>();
-
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && jumpCount < maxJumpCount) //점프 구현
+        isInWall = IsInWall();
+        isGrounded = IsGrounded();
+
+        if (Input.GetKeyDown(KeyCode.Space) && jumpCount < maxJumpCount)
         {
-            this.rigid2D.AddForce(transform.up * this.jumpForce);
-            jumpCount++;
+            if (isGrounded)
+            {
+                Jump();
+            }
+            else if (isInWall && jumpCount < maxJumpCount - 1)
+            {
+                Jump();
+            }
+            else if (!isInWall)
+            {
+                Jump();
+            }
         }
 
+        if (isGrounded)
+        {
+            jumpCount = 0;
+        }
 
         int key = 0;
         if (Input.GetKey(KeyCode.RightArrow) && !Input.GetKey(KeyCode.LeftArrow)) key = 1;
@@ -47,42 +66,59 @@ public class char_move : MonoBehaviour
         }
         else
         {
-        // 공중에서 속도가 maxWalkSpeed를 초과하지 않도록 제한
             if (speedx < maxWalkSpeed)
             {
-            // 공중에서도 일정한 속도 내에서 이동 가능하게 설정
                 this.rigid2D.AddForce(transform.right * key * this.walkForce);
             }
             else
             {
-            // 속도 제한을 넘는 경우에는 maxWalkSpeed로 고정
                 this.rigid2D.velocity = new Vector2(key * maxWalkSpeed, this.rigid2D.velocity.y);
             }
-        }   
-        if (key != 0)
-        {
-            transform.localScale = new Vector3(key, 1, 1); // 방향에 따라 캐릭터를 좌우 반전
         }
 
+        if (key != 0)
+        {
+            transform.localScale = new Vector3(key, 1, 1);
+        }
 
         if (transform.position.y < -5)
         {
-            SceneManager.LoadScene("gameover"); //게임오버씬 전환
+            SceneManager.LoadScene("gameover");
         }
-
     }
+
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
-        //Ground tag가 있는 오브젝트 에 닿아야 점프카운트를 초기화 시킴 (없으면 maxJumpcount까지만 점프하고 점프못함)
         {
             jumpCount = 0;
         }
     }
+
     bool IsInAir()
     {
-        // 캐릭터가 공중에 있는지 확인하는 함수
         return Mathf.Abs(rigid2D.velocity.y) > 0.01f;
     }
 
+    void Jump()
+    {
+        rigid2D.velocity = new Vector2(rigid2D.velocity.x, 0);
+        rigid2D.AddForce(Vector2.up * jumpForce);
+        jumpCount++;
+    }
+
+    bool IsInWall()
+    {
+        float rayLength = 0.1f;
+        LayerMask wallLayer = LayerMask.GetMask("Wall");
+        return Physics2D.Raycast(transform.position, Vector2.left, rayLength, wallLayer) ||
+               Physics2D.Raycast(transform.position, Vector2.right, rayLength, wallLayer);
+    }
+
+    bool IsGrounded()
+    {
+        float rayLength = 0.1f;
+        LayerMask groundLayer = LayerMask.GetMask("Ground");
+        return Physics2D.Raycast(transform.position, Vector2.down, rayLength, groundLayer);
+    }
 }
