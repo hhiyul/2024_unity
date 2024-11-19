@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class clear_flag : MonoBehaviour
+public class mainm : MonoBehaviour
 {
+    public string main_menu;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,11 +17,9 @@ public class clear_flag : MonoBehaviour
     {
         
     }
-    private void OnTriggerEnter(Collider other)
-    {
-        if(other.CompareTag("Player"))
-        {
-            SceneManager.LoadScene("clear");
-        }
+
+     public void Load() {
+        SceneManager.LoadScene("main_menu");
     }
 }
+

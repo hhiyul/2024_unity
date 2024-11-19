@@ -14,7 +14,7 @@ public class char_move : MonoBehaviour
     float walkForce = 7.0f;
     float maxWalkSpeed = 3.0f;
 
-    int maxJumpCount = 2;
+    int maxJumpCount = 2;  //점프 최대횟수 설정
     int jumpCount = 0;
     void Start()
     {
@@ -25,7 +25,7 @@ public class char_move : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && jumpCount < maxJumpCount) //점프
+        if (Input.GetKeyDown(KeyCode.Space) && jumpCount < maxJumpCount) //점프 구현
         {
             this.rigid2D.AddForce(transform.up * this.jumpForce);
             jumpCount++;
@@ -67,13 +67,14 @@ public class char_move : MonoBehaviour
 
         if (transform.position.y < -5)
         {
-            SceneManager.LoadScene("gameover"); //게임오버 문구임
+            SceneManager.LoadScene("gameover"); //게임오버씬 전환
         }
 
     }
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
+        //Ground tag가 있는 오브젝트 에 닿아야 점프카운트를 초기화 시킴 (없으면 maxJumpcount까지만 점프하고 점프못함)
         {
             jumpCount = 0;
         }
