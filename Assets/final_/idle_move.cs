@@ -2,9 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
 public class char_move : MonoBehaviour
 {
+
+    public string main;
+    public string gameover;
     // Start is called before the first frame update
     Rigidbody2D rigid2D;
     Animator animator;
@@ -61,9 +63,11 @@ public class char_move : MonoBehaviour
         {
             transform.localScale = new Vector3(key, 1, 1); // 방향에 따라 캐릭터를 좌우 반전
         }
+
+
         if (transform.position.y < -5)
         {
-            SceneManager.LoadScene("main"); //SampleScene은 일단 기본게임화면 씬 이름임
+            SceneManager.LoadScene("gameover"); //게임오버 문구임
         }
 
     }

@@ -5,12 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class Retry_button : MonoBehaviour
 {
+    public string main;
 
-    public void Restart()
-    {
+    void Start(){
+
+    }
+    void Updata(){
+
+    }
+    public void Load() {
         SceneManager.LoadScene("main");
     }
-    
-    
 }
 
