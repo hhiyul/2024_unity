@@ -85,6 +85,8 @@ public class char_move : MonoBehaviour
         {
             SceneManager.LoadScene("gameover");
         }
+
+        
     }
 
     void OnCollisionEnter2D(Collision2D collision)
