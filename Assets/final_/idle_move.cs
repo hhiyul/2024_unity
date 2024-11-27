@@ -14,8 +14,8 @@ public class char_move : MonoBehaviour
     float walkForce = 7.0f;
     float maxWalkSpeed = 3.0f;
 
-    int maxJumpCount = 2;
-    int jumpCount = 0;
+    public int maxJumpCount = 2;
+    public int jumpCount = 0;
     bool isInWall = false;
     bool isGrounded = false;
 
@@ -85,7 +85,7 @@ public class char_move : MonoBehaviour
         {
             SceneManager.LoadScene("gameover");
         }
-
+        
         
     }
 
@@ -95,6 +95,7 @@ public class char_move : MonoBehaviour
         {
             jumpCount = 0;
         }
+        
     }
 
     bool IsInAir()

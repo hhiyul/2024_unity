@@ -8,7 +8,7 @@ public class camera_move : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        this.player = GameObject.Find("Idle");
+        this.player = GameObject.Find("player");
     }
 
     // Update is called once per frame

@@ -2,29 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
-public class monster_move : MonoBehaviour
+public class headattack : MonoBehaviour
 {
-    public float speed = 2f;
-    private int direction = -1; // 이동 방향 (1: 오른쪽, -1: 왼쪽)
-    public string gameover;
-    Animator animator;
-    private SpriteRenderer spriteRenderer;
-    
     // Start is called before the first frame update
+    public float respawnTime = 2f; // 몹이 재생성되는 시간
+    private Vector3 spawnPosition; // 몹의 초기 위치
+    public GameObject enemyPrefab;
     void Start()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        this.animator = GetComponent<Animator>();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector2.right * direction * speed * Time.deltaTime);
-        GetComponent<SpriteRenderer>().flipX = direction > 0;
     }
-
     private void OnCollisionEnter2D(Collision2D other){  
         // Player 태그를 가진 오브젝트와 충돌했을 때 게임오버로 가는 동작
         if(other.gameObject.tag == "Player")
@@ -40,6 +32,12 @@ public class monster_move : MonoBehaviour
                 {
                     playerRb.velocity = new Vector2(playerRb.velocity.x, 5f); // 점프 높이 설정
                 }
+                char_move playerScript = other.gameObject.GetComponent<char_move>();
+                if (playerScript != null)
+                {
+                    playerScript.jumpCount = 0; // 점프 카운트 초기화
+                }
+            }
             }
             else
             {
@@ -48,21 +46,18 @@ public class monster_move : MonoBehaviour
             }
         }
 
-
-        if (other.gameObject.tag == "Obstacle" || other.gameObject.tag == "Ground")
-        {
-            direction *= -1; // 방향 반전
-
-            if (spriteRenderer != null)
-            {
-                spriteRenderer.flipX = direction < 0;    // 왼쪽 이동 시 반전
-            }
-        }
-    }
-     private void Die()
+    
+    private void Die()
     {
         // 몹 사망 처리
-        Destroy(gameObject);
+        GetComponent<Renderer>().enabled = false; // 스프라이트 렌더러 비활성화
+        GetComponent<Collider2D>().enabled = false; // 충돌 처리 비활성화
+        StartCoroutine(Respawn());
     }
-
+    private IEnumerator Respawn()
+    {
+        yield return new WaitForSeconds(respawnTime);
+        GameObject newEnemy = Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
+        Debug.Log("몹 재생성 완료");
+    }
 }
