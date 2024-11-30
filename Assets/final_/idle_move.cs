@@ -11,8 +11,8 @@ public class char_move : MonoBehaviour
     Rigidbody2D rigid2D;
     Animator animator;
     float jumpForce = 270.0f;
-    float walkForce = 7.0f;
-    float maxWalkSpeed = 3.0f;
+    float walkForce = 13.0f;
+    float maxWalkSpeed = 4.0f;
 
     public int maxJumpCount = 2;
     public int jumpCount = 0;

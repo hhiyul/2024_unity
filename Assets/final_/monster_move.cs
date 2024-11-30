@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+//직선운동만 하다 땅끝으로가면 그냥 떨어짐
 public class monster_move : MonoBehaviour
 {
     public float speed = 2f;
@@ -49,7 +49,7 @@ public class monster_move : MonoBehaviour
         }
 
 
-        if (other.gameObject.tag == "Obstacle" || other.gameObject.tag == "Ground")
+        if (other.gameObject.tag == "enemy" || other.gameObject.tag == "Ground")
         {
             direction *= -1; // 방향 반전
 
@@ -64,5 +64,6 @@ public class monster_move : MonoBehaviour
         // 몹 사망 처리
         Destroy(gameObject);
     }
+    
 
 }

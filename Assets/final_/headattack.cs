@@ -18,24 +18,25 @@ public class headattack : MonoBehaviour
     {
     }
     private void OnCollisionEnter2D(Collision2D other){  
-        // Player 태그를 가진 오브젝트와 충돌했을 때 게임오버로 가는 동작
+
         if(other.gameObject.tag == "Player")
         {
-            if (other.transform.position.y > transform.position.y + 0.5f)
+            if (other.transform.position.y > transform.position.y + 0.5f) 
+            // 위에서 몹을 밟으면
             {
-                // 몹 죽음 처리
+                // 몹 처치
                 Die();
 
                 Rigidbody2D playerRb = other.gameObject.GetComponent<Rigidbody2D>();
 
                 if (playerRb != null)
                 {
-                    playerRb.velocity = new Vector2(playerRb.velocity.x, 5f); // 점프 높이 설정
+                    playerRb.velocity = new Vector2(playerRb.velocity.x, 5f); // 반발력추가
                 }
                 char_move playerScript = other.gameObject.GetComponent<char_move>();
                 if (playerScript != null)
                 {
-                    playerScript.jumpCount = 0; // 점프 카운트 초기화
+                    playerScript.jumpCount = 0; // 죽이는데 성공하면 다시 더블점프 가능
                 }
             }
             }
@@ -58,6 +59,5 @@ public class headattack : MonoBehaviour
     {
         yield return new WaitForSeconds(respawnTime);
         GameObject newEnemy = Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
-        Debug.Log("몹 재생성 완료");
     }
 }
