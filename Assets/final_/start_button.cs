@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class mainm : MonoBehaviour
+public class start_button : MonoBehaviour
 {
-    public string Title;
+    public string stage1;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,9 +17,7 @@ public class mainm : MonoBehaviour
     {
         
     }
-
-     public void Load() {
-        SceneManager.LoadScene("Title");
+    public void Load() {
+        SceneManager.LoadScene("stage1");
     }
 }
-
