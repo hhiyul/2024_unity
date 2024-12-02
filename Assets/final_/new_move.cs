@@ -26,7 +26,7 @@ public class new_move : MonoBehaviour
         //자기 한수 앞
         Vector2 frontVector = new Vector2(rigid.position.x + nextMove * 0.6f, rigid.position.y);
         //Platform Check
-        Debug.DrawRay(frontVector, Vector3.down, new Color(0, 1, 0));
+    //   Debug.DrawRay(frontVector, Vector3.down, new Color(0, 1, 0));
         //빔을 쏘고 빔을 맞은 오브젝트에 대한 정보 (여기서는 layer가 Platform인 오브젝트만 받겠다.)
         RaycastHit2D rayhit = Physics2D.Raycast(frontVector, Vector3.down, 1, LayerMask.GetMask("Platform"));
         if (rayhit.collider == null) {
@@ -58,7 +58,7 @@ public class new_move : MonoBehaviour
         }
     //재귀함수
     void Think() {
-        nextMove = Random.Range(-1, 2);
+        nextMove = Random.Range(-2, 2);
         //방향
         if (nextMove != 0) {
             spriteRenderer.flipX = nextMove == 1;

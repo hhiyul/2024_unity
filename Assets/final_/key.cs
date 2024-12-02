@@ -21,7 +21,7 @@ public class key : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             
-            Die2();
+            Destroy(gameObject);
 
             if (obstacle != null)
             {
@@ -29,11 +29,4 @@ public class key : MonoBehaviour
             }
         }
     }
-
-
-private void Die2()
-{
-        // 닿으면 사라지게 처리
-     Destroy(gameObject);
-}
 }

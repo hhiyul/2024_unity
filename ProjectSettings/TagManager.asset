@@ -8,6 +8,7 @@ TagManager:
   - jump
   - obstacle
   - enemy
+  - Platform
   layers:
   - Default
   - TransparentFX

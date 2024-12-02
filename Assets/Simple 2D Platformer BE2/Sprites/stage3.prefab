@@ -752,7 +752,7 @@ Tilemap:
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Origin: {x: -9, y: -7, z: 0}
-  m_Size: {x: 43, y: 18, z: 1}
+  m_Size: {x: 41, y: 15, z: 1}
   m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
   m_TileOrientation: 0
   m_TileOrientationMatrix:
@@ -887,14 +887,6 @@ CompositeCollider2D:
   m_ColliderPaths:
   - m_Collider: {fileID: 3710218210937055354}
     m_ColliderPaths:
-    - - X: 340000000
-        Y: 110000000
-      - X: 290000000
-        Y: 110000000
-      - X: 290000000
-        Y: 100000000
-      - X: 340000000
-        Y: 100000000
     - - X: 320000000
         Y: 80000000
       - X: 270000000
@@ -929,10 +921,6 @@ CompositeCollider2D:
         Y: -70000000
   m_CompositePaths:
     m_Paths:
-    - - {x: 33.999973, y: 10}
-      - {x: 33.999973, y: 11}
-      - {x: 29, y: 10.99997}
-      - {x: 29.000029, y: 10}
     - - {x: 31.999971, y: 7}
       - {x: 31.999971, y: 8}
       - {x: 27, y: 7.9999704}
@@ -1034,7 +1022,7 @@ Grid:
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 0
---- !u!114 &2534495113475513838
+--- !u!114 &6718811329319624740
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

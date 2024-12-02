@@ -95,6 +95,10 @@ public class char_move : MonoBehaviour
         {
             jumpCount = 0;
         }
+        if (collision.gameObject.CompareTag("Platform"))
+        {
+            jumpCount = 0;
+        }
         
     }
 
