@@ -71,19 +71,17 @@ public class move_ground : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Platform"))
-        {
-            isOnMovingplatform = true;
-            platform = collision.transform;
-        }
+        if (collision.collider.CompareTag("Player")) // 캐릭터가 발판 위로 올라오면
+    {
+        collision.transform.parent = transform; // 발판을 부모로 설정
+    }
     }
     private void OnCollisionExit2D(Collision2D collision)
     {
-if (collision.gameObject.CompareTag("Platform"))
+        if (collision.collider.CompareTag("Player")) // 캐릭터가 발판에서 내려오면
         {
-            isOnMovingplatform = false;
-            platform = null;
-        }
+        collision.transform.parent = null; // 부모 관계 해제
+    }
     }
     
 }

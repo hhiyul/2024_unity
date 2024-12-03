@@ -25,7 +25,7 @@ public class new_move : MonoBehaviour
         this.rigid.velocity = new Vector2(nextMove, rigid.velocity.y);
         //자기 한수 앞
         Vector2 frontVector = new Vector2(rigid.position.x + nextMove * 0.6f, rigid.position.y);
-        //Platform Check
+        //
     //   Debug.DrawRay(frontVector, Vector3.down, new Color(0, 1, 0));
         //빔을 쏘고 빔을 맞은 오브젝트에 대한 정보 (여기서는 layer가 Platform인 오브젝트만 받겠다.)
         RaycastHit2D rayhit = Physics2D.Raycast(frontVector, Vector3.down, 1, LayerMask.GetMask("Platform"));
@@ -58,14 +58,19 @@ public class new_move : MonoBehaviour
         }
     //재귀함수
     void Think() {
-        nextMove = Random.Range(-2, 2);
+        nextMove = Random.Range(-1, 2);
         //방향
-        if (nextMove != 0) {
-            spriteRenderer.flipX = nextMove == 1;
-        }
+         if (nextMove > 0)
+    {
+        spriteRenderer.flipX = true; // 오른쪽
+    }
+    else if (nextMove < 0)
+    {
+        spriteRenderer.flipX = false; // 왼쪽
+    }
 
         //재귀함수 호출
-        float nextThinkTime = Random.Range(2f, 6f);
+        float nextThinkTime = Random.Range(2f, 5f);
         Invoke("Think", nextThinkTime);
     }
 
@@ -77,7 +82,7 @@ public class new_move : MonoBehaviour
         //생각 취소
         CancelInvoke();
         //다시 생각
-        Invoke("Think", 5);
+        Invoke("Think", 3);
     }
     private void Die()
     {

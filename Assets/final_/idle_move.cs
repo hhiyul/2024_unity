@@ -10,9 +10,10 @@ public class char_move : MonoBehaviour
 
     Rigidbody2D rigid2D;
     Animator animator;
-    float jumpForce = 270.0f;
-    float walkForce = 13.0f;
-    float maxWalkSpeed = 4.0f;
+    float jumpForce = 250.0f;
+//    float walkForce = 10.0f;
+    float maxWalkSpeed = 5.0f;
+    
 
     public int maxJumpCount = 2;
     public int jumpCount = 0;
@@ -55,7 +56,10 @@ public class char_move : MonoBehaviour
         if (Input.GetKey(KeyCode.RightArrow) && !Input.GetKey(KeyCode.LeftArrow)) key = 1;
         else if (Input.GetKey(KeyCode.LeftArrow) && !Input.GetKey(KeyCode.RightArrow)) key = -1;
 
-        float speedx = Mathf.Abs(this.rigid2D.velocity.x);
+        this.rigid2D.velocity = new Vector2(key * maxWalkSpeed, this.rigid2D.velocity.y);
+
+     /*  float speedx = Mathf.Abs(this.rigid2D.velocity.x); 
+
 
         if (!IsInAir())
         {
@@ -66,7 +70,7 @@ public class char_move : MonoBehaviour
         }
         else
         {
-            if (speedx < maxWalkSpeed)
+            if (key != 0)
             {
                 this.rigid2D.AddForce(transform.right * key * this.walkForce);
             }
@@ -75,7 +79,7 @@ public class char_move : MonoBehaviour
                 this.rigid2D.velocity = new Vector2(key * maxWalkSpeed, this.rigid2D.velocity.y);
             }
         }
-
+*/
         if (key != 0)
         {
             transform.localScale = new Vector3(key, 1, 1);
@@ -91,14 +95,26 @@ public class char_move : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Ground"))
+        foreach (ContactPoint2D contact in collision.contacts)
+        {
+            Vector2 normal = contact.normal;
+
+            if (normal.y > 0.5f)
+            {
+                jumpCount = 0;
+                break;
+            }
+        }
+     /*   if (collision.gameObject.CompareTag("Ground"))
         {
             jumpCount = 0;
         }
         if (collision.gameObject.CompareTag("Platform"))
         {
             jumpCount = 0;
-        }
+            rigid2D.velocity = Vector2.zero; 
+
+        }*/
         
     }
 
@@ -128,4 +144,5 @@ public class char_move : MonoBehaviour
         LayerMask groundLayer = LayerMask.GetMask("Ground");
         return Physics2D.Raycast(transform.position, Vector2.down, rayLength, groundLayer);
     }
+    
 }
