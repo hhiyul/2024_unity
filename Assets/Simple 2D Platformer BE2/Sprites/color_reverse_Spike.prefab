@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1163467236575546097}
   - component: {fileID: 1986794744962475926}
   m_Layer: 0
-  m_Name: Spike (8)
+  m_Name: color_reverse_Spike
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
