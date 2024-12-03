@@ -11,6 +11,10 @@ public class move_ground : MonoBehaviour
      private Transform platform;
     private Vector3 lastPlatformPosition;
 
+    private bool isOnMovingplatform = false;
+
+
+
     public float waitsecond;
     public float delay;
     private Vector2 startPos;
@@ -27,7 +31,12 @@ public class move_ground : MonoBehaviour
     void Update()
     {
         float newY = startPos.y + Mathf.Sin(Time.time * speed) * height;
-    rb.MovePosition(new Vector2(startPos.x, newY));
+        rb.MovePosition(new Vector2(startPos.x, newY));
+        if (isOnMovingplatform)
+        {
+            Vector3 platformVelocity = platform.GetComponent<Rigidbody2D>().velocity;
+            rb.velocity = new Vector2(platformVelocity.x, rb.velocity.y);
+        }   
     }
     IEnumerator DelayedStart(float delay)
     {
@@ -37,7 +46,7 @@ public class move_ground : MonoBehaviour
         // 왕복 이동 코루틴 시작
         StartCoroutine(MoveUpDown());
     }
-     IEnumerator MoveUpDown()
+    IEnumerator MoveUpDown()
     {
         while (true)
         {
@@ -57,6 +66,23 @@ public class move_ground : MonoBehaviour
 
             // 잠시 대기
             yield return new WaitForSeconds(waitsecond);
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Platform"))
+        {
+            isOnMovingplatform = true;
+            platform = collision.transform;
+        }
+    }
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+if (collision.gameObject.CompareTag("Platform"))
+        {
+            isOnMovingplatform = false;
+            platform = null;
         }
     }
     
