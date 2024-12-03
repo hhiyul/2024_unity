@@ -153,6 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrowPrefab: {fileID: 0}
+  WaitForSeconds: 3
 --- !u!212 &33929493
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -660,7 +661,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9059649964749673315, guid: 3d5e5f60afc4b2f4baa463e9cb8b0d8a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -15.981042
+      value: -16.01
       objectReference: {fileID: 0}
     - target: {fileID: 9059649964749673315, guid: 3d5e5f60afc4b2f4baa463e9cb8b0d8a, type: 3}
       propertyPath: m_LocalPosition.y
@@ -713,11 +714,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3233592009768010462, guid: 7520c59dcafead64e9a1f528f9235aab, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.3
+      value: 4.15
       objectReference: {fileID: 0}
     - target: {fileID: 3233592009768010462, guid: 7520c59dcafead64e9a1f528f9235aab, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.38
+      value: 2.31
       objectReference: {fileID: 0}
     - target: {fileID: 3233592009768010462, guid: 7520c59dcafead64e9a1f528f9235aab, type: 3}
       propertyPath: m_LocalPosition.z
