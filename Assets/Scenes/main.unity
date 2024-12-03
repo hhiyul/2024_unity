@@ -1810,6 +1810,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrowPrefab: {fileID: 3470208915340153838, guid: 3a2349da445a9ea47b08b7f911e652eb, type: 3}
+  WaitForSeconds: 3
 --- !u!4 &1065793009
 Transform:
   m_ObjectHideFlags: 0
