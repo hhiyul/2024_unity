@@ -7,6 +7,7 @@ public class clear_flag : MonoBehaviour
 {
     public string gameOverSceneName = "gameover";
     public string clear;
+    public Vector2 nextSceneStartPosition;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +23,7 @@ public class clear_flag : MonoBehaviour
         // Player 태그를 가진 오브젝트와 충돌했을 때만 동작
         if (other.CompareTag("Player"))
         {
+            SceneManager.sceneLoaded += OnSceneLoaded;
             LoadNextStage();
         }
     }
@@ -51,4 +53,15 @@ public class clear_flag : MonoBehaviour
             SceneManager.LoadScene("clear");
         }
     }
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        GameObject player = GameObject.FindWithTag("Player"); // 플레이어 찾기
+        if (player != null)
+        {
+            player.transform.position = nextSceneStartPosition; // 시작 위치 설정
+        }
+
+        SceneManager.sceneLoaded -= OnSceneLoaded; // 이벤트 구독 해제
+    }
+
 }

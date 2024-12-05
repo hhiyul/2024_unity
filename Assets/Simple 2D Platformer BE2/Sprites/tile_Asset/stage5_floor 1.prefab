@@ -178,16 +178,6 @@ Tilemap:
   - first: {x: -7, y: -1, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 0
-      m_TileSpriteIndex: 0
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741825
-  - first: {x: -6, y: -1, z: 0}
-    second:
-      serializedVersion: 2
       m_TileIndex: 2
       m_TileSpriteIndex: 2
       m_TileMatrixIndex: 0
@@ -387,21 +377,21 @@ Tilemap:
       m_AllTileFlags: 1073741825
   m_AnimatedTiles: {}
   m_TileAssetArray:
-  - m_RefCount: 26
+  - m_RefCount: 25
     m_Data: {fileID: 11400000, guid: 387f008a5112aad4a828aa9c7cd36882, type: 2}
   - m_RefCount: 4
     m_Data: {fileID: 11400000, guid: c8290f22b95a91a48bbcff04ba54aef6, type: 2}
   - m_RefCount: 4
     m_Data: {fileID: 11400000, guid: 4e58465959cab864898f4c1e94dc8d04, type: 2}
   m_TileSpriteArray:
-  - m_RefCount: 26
+  - m_RefCount: 25
     m_Data: {fileID: -2784247815669728694, guid: e85c6e02fda4a004b84664f435ad4d73, type: 3}
   - m_RefCount: 4
     m_Data: {fileID: 8506730005712635708, guid: e85c6e02fda4a004b84664f435ad4d73, type: 3}
   - m_RefCount: 4
     m_Data: {fileID: 1982798753367972342, guid: e85c6e02fda4a004b84664f435ad4d73, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 34
+  - m_RefCount: 33
     m_Data:
       e00: 1
       e01: 0
@@ -420,7 +410,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 34
+  - m_RefCount: 33
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
@@ -569,13 +559,13 @@ CompositeCollider2D:
         Y: -10000000
       - X: -140000000
         Y: -10000000
-    - - X: -50000000
+    - - X: -60000000
         Y: 0
       - X: -100000000
         Y: 0
       - X: -100000000
         Y: -10000000
-      - X: -50000000
+      - X: -60000000
         Y: -10000000
     - - X: 10000000
         Y: 0
@@ -603,8 +593,8 @@ CompositeCollider2D:
       - {x: 0.99997073, y: 0}
       - {x: -4, y: -0.000029300001}
       - {x: -3.999971, y: -1}
-    - - {x: -5.000029, y: -1}
-      - {x: -5.000029, y: 0}
+    - - {x: -6.000029, y: -1}
+      - {x: -6.000029, y: 0}
       - {x: -10, y: -0.000029300001}
       - {x: -9.99997, y: -1}
     - - {x: -14.000029, y: -1}
@@ -696,7 +686,7 @@ Grid:
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 0
---- !u!114 &8420861012490050562
+--- !u!114 &3900760986841469488
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

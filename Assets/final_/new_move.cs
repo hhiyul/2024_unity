@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-//땅끝으로 가도 안떨어지는 ai
+//정해둔 구간내에서 마음대로 움직이는 몬스터 ai
 public class new_move : MonoBehaviour
 {
     Rigidbody2D rigid;
@@ -33,7 +33,6 @@ public class new_move : MonoBehaviour
         //일정 영역 벗어나면 되돌리는 코드
         if (IsExitingRestrictedArea(transform.position))
         {
-            Debug.Log("딱걸림");
             Turn(); // 방향 전환
             return; // 이동 중지
         }
@@ -108,7 +107,7 @@ public class new_move : MonoBehaviour
     }
      private bool IsExitingRestrictedArea(Vector2 position)
     {
-        // 제한 영역 바깥으로 나가려는지 확인
+        // 제한 영역 설정 함수
         if (position.x <= restrictedAreaMin.x && nextMove < 0)
         {
             return true; // 왼쪽 경계를 벗어나려고 함

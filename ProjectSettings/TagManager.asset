@@ -10,6 +10,7 @@ TagManager:
   - enemy
   - Platform
   - invisible
+  - Coin
   layers:
   - Default
   - TransparentFX

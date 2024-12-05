@@ -42,6 +42,9 @@ public class headattack : MonoBehaviour
             }
             else
             {
+                string currentSceneName = SceneManager.GetActiveScene().name;
+                PlayerPrefs.SetString("LastPlayedScene", currentSceneName);
+                PlayerPrefs.Save();
                 // 머리를 밟지 않고 충돌하면 플레이어가 죽음
                 SceneManager.LoadScene("gameover");
             }

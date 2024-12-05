@@ -13,8 +13,9 @@ public class Retry_button : MonoBehaviour
     void Updata(){
 
     }
-    public void Load() {
-        SceneManager.LoadScene("main");
-    }
+    
+     
 }
+
+
 
