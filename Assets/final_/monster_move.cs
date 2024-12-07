@@ -10,6 +10,7 @@ public class monster_move : MonoBehaviour
     public string gameover;
     Animator animator;
     private SpriteRenderer spriteRenderer;
+    public Gameover_manager gameOverManager;
     
     // Start is called before the first frame update
     void Start()
@@ -46,7 +47,7 @@ public class monster_move : MonoBehaviour
             else
             {
                 // 머리를 밟지 않고 충돌하면 플레이어가 죽음
-                SceneManager.LoadScene("gameover");
+                gameOverManager.OnPlayerDeath();
             }
 
         }

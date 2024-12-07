@@ -18,6 +18,7 @@ public class start_button : MonoBehaviour
         
     }
     public void Load() {
+        Time.timeScale = 1f;
         SceneManager.LoadScene("stage1");
     }
 }

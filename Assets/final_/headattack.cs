@@ -8,6 +8,7 @@ public class headattack : MonoBehaviour
     public float respawnTime = 2f; // 몹이 재생성되는 시간
     private Vector3 spawnPosition; // 몹의 초기 위치
     public GameObject enemyPrefab;
+    public Gameover_manager gameOverManager;
     void Start()
     {
         
@@ -42,25 +43,22 @@ public class headattack : MonoBehaviour
             }
             else
             {
-                string currentSceneName = SceneManager.GetActiveScene().name;
-                PlayerPrefs.SetString("LastPlayedScene", currentSceneName);
-                PlayerPrefs.Save();
                 // 머리를 밟지 않고 충돌하면 플레이어가 죽음
-                SceneManager.LoadScene("gameover");
+                gameOverManager.OnPlayerDeath();
             }
+
         }
 
     
     private void Die()
     {
         // 몹 사망 처리
-        GetComponent<Renderer>().enabled = false; // 스프라이트 렌더러 비활성화
-        GetComponent<Collider2D>().enabled = false; // 충돌 처리 비활성화
         StartCoroutine(Respawn());
     }
     private IEnumerator Respawn()
     {
         yield return new WaitForSeconds(respawnTime);
-        GameObject newEnemy = Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
+
+       
     }
 }

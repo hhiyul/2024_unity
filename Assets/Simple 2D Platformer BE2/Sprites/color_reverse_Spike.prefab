@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1986794744962475926}
   m_Layer: 0
   m_Name: color_reverse_Spike
-  m_TagString: Untagged
+  m_TagString: spike
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -116,7 +116,7 @@ EdgeCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -142,6 +142,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b2ea424e84751140983d63f5901f27c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameOverManager: {fileID: 0}
 --- !u!114 &1986794744962475926
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -154,3 +155,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73daa7b9a3d45544ca08517a3e7b0f30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameOverManager: {fileID: 0}

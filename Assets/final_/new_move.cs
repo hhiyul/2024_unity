@@ -11,6 +11,7 @@ public class new_move : MonoBehaviour
     public string gameover;
     public Vector2 restrictedAreaMin = new Vector2(-5f, -5f); // 제한 영역의 최소 좌표
     public Vector2 restrictedAreaMax = new Vector2(5f, 5f);   // 제한 영역의 최대 좌표
+    public Gameover_manager gameOverManager;
 
 
 
@@ -63,7 +64,7 @@ public class new_move : MonoBehaviour
             else
             {
                 // 머리를 밟지 않고 충돌하면 플레이어가 죽음
-                SceneManager.LoadScene("gameover");
+                gameOverManager.OnPlayerDeath();
             }
         }
         if (other.gameObject.tag == "enemy")

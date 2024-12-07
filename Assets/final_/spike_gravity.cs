@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class NewBehaviourScript : MonoBehaviour
 {
+    public Gameover_manager gameOverManager;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,7 +28,7 @@ public class NewBehaviourScript : MonoBehaviour
         if(other.gameObject.tag == "Player")
         {
             Die();
-            SceneManager.LoadScene("gameover");
+            gameOverManager.OnPlayerDeath();
         }
     }
     private void Die()

@@ -34,24 +34,24 @@ public class Scoremanager : MonoBehaviour
         }
     }
     
-    private void OnTriggerEnter2D(Collider2D collision)
+    public void UpdateScoreText()
     {
-        if (collision.CompareTag("Coin")) // 태그가 "Coin"인 경우
-        {
-            score += 10; // 점수 추가
-            UpdateScoreText(); // UI 업데이트
-            Destroy(collision.gameObject); // 코인 오브젝트 제거
-        }
-    }
-    void UpdateScoreText()
-    {
-        scoreText.text = "Score: " + score;
+        if (scoreText != null)
+            scoreText.text = "점수: " + score;
     }
 
     public void SetScoreText(TextMeshProUGUI newScoreText)
     {
         scoreText = newScoreText;
         UpdateScoreText(); // 새 텍스트로 점수 표시 업데이트
+    }
+      public int GetScore() // 점수를 반환하는 메서드
+    {
+        return score;
+    }
+    public void ResetScore()
+    {
+        score = 0;
     }
     
 }
