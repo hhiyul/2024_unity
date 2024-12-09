@@ -1723,6 +1723,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b2ea424e84751140983d63f5901f27c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameOverManager: {fileID: 0}
 --- !u!1 &403204306
 GameObject:
   m_ObjectHideFlags: 0
@@ -2002,6 +2003,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b2ea424e84751140983d63f5901f27c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameOverManager: {fileID: 0}
 --- !u!1001 &723981816
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2098,6 +2100,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   score: 0
   scoreText: {fileID: 204363987}
+--- !u!95 &783702785
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 783702781}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c600803576727324fb4db1f76727831a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &1171829966
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2283,6 +2306,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 2
   gameover: 
+  gameOverManager: {fileID: 0}
 --- !u!212 &1246270179
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3036,6 +3060,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b2ea424e84751140983d63f5901f27c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameOverManager: {fileID: 0}
 --- !u!1001 &2128784546
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3181,6 +3206,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 2
   gameover: 
+  gameOverManager: {fileID: 0}
 --- !u!1001 &644061823813289406
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3324,11 +3350,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6994718198014727470, guid: 9037bb4d0664b7b4a8b0d2ba81b6e6a3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.54
+      value: 16.97
       objectReference: {fileID: 0}
     - target: {fileID: 6994718198014727470, guid: 9037bb4d0664b7b4a8b0d2ba81b6e6a3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.62
+      value: 1.26
       objectReference: {fileID: 0}
     - target: {fileID: 6994718198014727470, guid: 9037bb4d0664b7b4a8b0d2ba81b6e6a3, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3366,13 +3392,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: player
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7565026182539509423, guid: 9037bb4d0664b7b4a8b0d2ba81b6e6a3, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 7622927331279046036, guid: 9037bb4d0664b7b4a8b0d2ba81b6e6a3, type: 3}
-      insertIndex: 5
+      insertIndex: 4
       addedObject: {fileID: 783702784}
+    - targetCorrespondingSourceObject: {fileID: 7622927331279046036, guid: 9037bb4d0664b7b4a8b0d2ba81b6e6a3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 783702785}
   m_SourcePrefab: {fileID: 100100000, guid: 9037bb4d0664b7b4a8b0d2ba81b6e6a3, type: 3}
 --- !u!1001 &2293775221473796872
 PrefabInstance:

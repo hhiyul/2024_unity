@@ -72,6 +72,11 @@ public class new_move : MonoBehaviour
             Physics2D.IgnoreCollision(other.collider, GetComponent<Collider2D>());
             return;
         }
+        if (other.gameObject.tag == "spike")
+        { //같은 적끼리는 통과되는 문구
+            Physics2D.IgnoreCollision(other.collider, GetComponent<Collider2D>());
+            return;
+        }
         }
     //재귀함수
     void Think() {

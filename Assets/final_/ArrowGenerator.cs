@@ -7,7 +7,9 @@ public class ArrowGenerator : MonoBehaviour
     public GameObject arrowPrefab;
     public float fallSpeed = 8.0f;
     private Rigidbody2D rb;
-    public float spawnInterval = 2.0f;
+    public float spawnInterval;
+    float Randommax = 12;
+    float Randommin = 2;
     void Start()
     {
         StartCoroutine(SpawnArrows());
@@ -31,6 +33,7 @@ public class ArrowGenerator : MonoBehaviour
     }*/
     IEnumerator SpawnArrows()
     {
+        spawnInterval = Random.Range(Randommin,Randommax);
         yield return new WaitForSeconds(spawnInterval/2);
         while (true)
         {

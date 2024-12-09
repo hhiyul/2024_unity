@@ -975,6 +975,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 315436703}
     m_Modifications:
+    - target: {fileID: 1325599173733418706, guid: bffbc07f3873c944da4a26518a88d427, type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 3594423174458896441, guid: bffbc07f3873c944da4a26518a88d427, type: 3}
       propertyPath: m_Name
       value: new_monster (2)
@@ -1926,6 +1930,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 315436703}
     m_Modifications:
+    - target: {fileID: 1325599173733418706, guid: bffbc07f3873c944da4a26518a88d427, type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 3594423174458896441, guid: bffbc07f3873c944da4a26518a88d427, type: 3}
       propertyPath: m_Name
       value: new_monster (6)
@@ -3103,6 +3111,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 315436703}
     m_Modifications:
+    - target: {fileID: 1325599173733418706, guid: bffbc07f3873c944da4a26518a88d427, type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 3594423174458896441, guid: bffbc07f3873c944da4a26518a88d427, type: 3}
       propertyPath: m_Name
       value: new_monster (1)
@@ -3700,6 +3712,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 315436703}
     m_Modifications:
+    - target: {fileID: 1325599173733418706, guid: bffbc07f3873c944da4a26518a88d427, type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 3594423174458896441, guid: bffbc07f3873c944da4a26518a88d427, type: 3}
       propertyPath: m_Name
       value: new_monster (5)
@@ -5648,6 +5664,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 315436703}
     m_Modifications:
+    - target: {fileID: 1325599173733418706, guid: bffbc07f3873c944da4a26518a88d427, type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 3594423174458896441, guid: bffbc07f3873c944da4a26518a88d427, type: 3}
       propertyPath: m_Name
       value: new_monster (4)
@@ -9703,6 +9723,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 315436703}
     m_Modifications:
+    - target: {fileID: 1325599173733418706, guid: bffbc07f3873c944da4a26518a88d427, type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 3594423174458896441, guid: bffbc07f3873c944da4a26518a88d427, type: 3}
       propertyPath: m_Name
       value: new_monster (3)

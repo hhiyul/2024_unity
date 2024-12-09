@@ -1198,6 +1198,18 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 3229698243955491178, guid: f8885655d1f800a439a62b48a702baf4, type: 3}
+      propertyPath: m_UsedByComposite
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3500409788881512985, guid: f8885655d1f800a439a62b48a702baf4, type: 3}
+      propertyPath: m_ColliderPaths.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3500409788881512985, guid: f8885655d1f800a439a62b48a702baf4, type: 3}
+      propertyPath: m_CompositePaths.m_Paths.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4699135608195478379, guid: f8885655d1f800a439a62b48a702baf4, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.2858057
@@ -2528,7 +2540,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 7.835429
+  orthographic size: 6.5832415
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -2553,7 +2565,7 @@ Transform:
   m_GameObject: {fileID: 1938277562}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.78, y: 0.91, z: -10}
+  m_LocalPosition: {x: -10.06, y: 1.19, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
