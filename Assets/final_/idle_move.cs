@@ -31,8 +31,12 @@ public class char_move : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space) && jumpCount < maxJumpCount)
         {
+<<<<<<< Updated upstream
             Jump();
         
+=======
+           Jump();
+>>>>>>> Stashed changes
         }
         if (Input.GetKeyDown(KeyCode.Space) && !animator.GetBool("isjumping"))
         {
@@ -55,29 +59,6 @@ public class char_move : MonoBehaviour
 
         this.rigid2D.velocity = new Vector2(key * maxWalkSpeed, this.rigid2D.velocity.y);
 
-     /*  float speedx = Mathf.Abs(this.rigid2D.velocity.x); 
-
-
-        if (!IsInAir())
-        {
-            if (speedx < this.maxWalkSpeed)
-            {
-                this.rigid2D.velocity = new Vector2(key * maxWalkSpeed, this.rigid2D.velocity.y);
-            }
-        }
-        else
-        {
-            if (key != 0)
-            {
-                this.rigid2D.AddForce(transform.right * key * this.walkForce);
-            }
-            else
-            {
-                this.rigid2D.velocity = new Vector2(key * maxWalkSpeed, this.rigid2D.velocity.y);
-            }
-        }
-        
-*/
 
         if (key != 0)
         {
@@ -158,15 +139,21 @@ public class char_move : MonoBehaviour
         }*/
         
     }
+<<<<<<< Updated upstream
 
 
+=======
+>>>>>>> Stashed changes
     void Jump()
     {
         rigid2D.velocity = new Vector2(rigid2D.velocity.x, 0);
         rigid2D.AddForce(Vector2.up * jumpForce);
         jumpCount++;
     }
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
     public void ResetPlayer()
     {
         // 위치 및 물리 상태 초기화

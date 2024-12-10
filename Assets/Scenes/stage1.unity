@@ -2828,6 +2828,10 @@ PrefabInstance:
       propertyPath: m_UseAutoMass
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5307430347483901687, guid: b9c1f3dc53bb05140955f099e600c78f, type: 3}
+      propertyPath: m_UseColliderMask
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7726010546664091882, guid: b9c1f3dc53bb05140955f099e600c78f, type: 3}
       propertyPath: gameOverUI
       value: 
