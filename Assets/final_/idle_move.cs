@@ -19,8 +19,6 @@ public class char_move : MonoBehaviour
 
     public int maxJumpCount = 2;
     public int jumpCount = 0;
-    bool isInWall = false;
-    bool isGrounded = false;
 
     void Start()
     {
@@ -30,23 +28,11 @@ public class char_move : MonoBehaviour
 
     void Update()
     {
-        isInWall = IsInWall();
-        isGrounded = IsGrounded();
 
         if (Input.GetKeyDown(KeyCode.Space) && jumpCount < maxJumpCount)
         {
-            if (isGrounded)
-            {
-                Jump();
-            }
-            else if (isInWall && jumpCount < maxJumpCount - 1)
-            {
-                Jump();
-            }
-            else if (!isInWall)
-            {
-                Jump();
-            }
+            Jump();
+        
         }
         if (Input.GetKeyDown(KeyCode.Space) && !animator.GetBool("isjumping"))
         {
@@ -173,10 +159,6 @@ public class char_move : MonoBehaviour
         
     }
 
-    bool IsInAir()
-    {
-        return Mathf.Abs(rigid2D.velocity.y) > 0.01f;
-    }
 
     void Jump()
     {
@@ -185,20 +167,6 @@ public class char_move : MonoBehaviour
         jumpCount++;
     }
 
-    bool IsInWall()
-    {
-        float rayLength = 0.1f;
-        LayerMask wallLayer = LayerMask.GetMask("Wall");
-        return Physics2D.Raycast(transform.position, Vector2.left, rayLength, wallLayer) ||
-               Physics2D.Raycast(transform.position, Vector2.right, rayLength, wallLayer);
-    }
-
-    bool IsGrounded()
-    {
-        float rayLength = 0.1f;
-        LayerMask groundLayer = LayerMask.GetMask("Ground");
-        return Physics2D.Raycast(transform.position, Vector2.down, rayLength, groundLayer);
-    }
     public void ResetPlayer()
     {
         // 위치 및 물리 상태 초기화
