@@ -5,7 +5,7 @@ using UnityEngine;
 public class ArrowGenerator : MonoBehaviour
 {
     public GameObject arrowPrefab;
-    public float fallSpeed = 8.0f;
+    public float fallSpeed = 2.0f;
     private Rigidbody2D rb;
     public float spawnInterval;
     float Randommax = 12;
@@ -37,13 +37,12 @@ public class ArrowGenerator : MonoBehaviour
         yield return new WaitForSeconds(spawnInterval/2);
         while (true)
         {
+            yield return new WaitForSeconds(spawnInterval);
+            spawnInterval = Random.Range(Randommin,Randommax);
             // 화살 생성
             Vector3 generatorPosition = this.transform.position;
             GameObject go = Instantiate(arrowPrefab);
             go.transform.position = generatorPosition;
-
-            // 지정된 시간 동안 대기
-            yield return new WaitForSeconds(spawnInterval);
         }
     }
 }
