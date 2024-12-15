@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class char_move : MonoBehaviour
 {
+    
     private Vector3 startPosition;
     public Gameover_manager gameOverManager;
     public string main;
@@ -19,6 +20,8 @@ public class char_move : MonoBehaviour
 
     public int maxJumpCount = 2;
     public int jumpCount = 0;
+    bool isInWall = false;
+    bool isGrounded = false;
 
     void Start()
     {
@@ -31,12 +34,7 @@ public class char_move : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space) && jumpCount < maxJumpCount)
         {
-<<<<<<< Updated upstream
-            Jump();
-        
-=======
            Jump();
->>>>>>> Stashed changes
         }
         if (Input.GetKeyDown(KeyCode.Space) && !animator.GetBool("isjumping"))
         {
@@ -48,10 +46,6 @@ public class char_move : MonoBehaviour
             animator.SetBool("isdoublejumping", true);
         }
 
-        if (isGrounded)
-        {
-            jumpCount = 0;
-        }
 
         int key = 0;
         if (Input.GetKey(KeyCode.RightArrow) && !Input.GetKey(KeyCode.LeftArrow)) key = 1;
@@ -139,21 +133,12 @@ public class char_move : MonoBehaviour
         }*/
         
     }
-<<<<<<< Updated upstream
-
-
-=======
->>>>>>> Stashed changes
     void Jump()
     {
         rigid2D.velocity = new Vector2(rigid2D.velocity.x, 0);
         rigid2D.AddForce(Vector2.up * jumpForce);
         jumpCount++;
     }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
     public void ResetPlayer()
     {
         // 위치 및 물리 상태 초기화
