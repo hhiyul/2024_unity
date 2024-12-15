@@ -1240,7 +1240,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrowPrefab: {fileID: 3470208915340153838, guid: 3a2349da445a9ea47b08b7f911e652eb, type: 3}
-  fallSpeed: 8
+  fallSpeed: 4
   spawnInterval: 9
 --- !u!4 &1029788725
 Transform:
@@ -1485,7 +1485,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrowPrefab: {fileID: 3470208915340153838, guid: 3a2349da445a9ea47b08b7f911e652eb, type: 3}
-  fallSpeed: 8
+  fallSpeed: 4
   spawnInterval: 7
 --- !u!4 &1142682997
 Transform:
@@ -2177,7 +2177,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrowPrefab: {fileID: 3470208915340153838, guid: 3a2349da445a9ea47b08b7f911e652eb, type: 3}
-  fallSpeed: 8
+  fallSpeed: 4
   spawnInterval: 5.5
 --- !u!4 &1459749389
 Transform:

@@ -138,6 +138,7 @@ public class char_move : MonoBehaviour
         rigid2D.velocity = new Vector2(rigid2D.velocity.x, 0);
         rigid2D.AddForce(Vector2.up * jumpForce);
         jumpCount++;
+        GetComponent<AudioSource>().Play();
     }
     public void ResetPlayer()
     {

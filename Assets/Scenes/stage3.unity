@@ -1659,7 +1659,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrowPrefab: {fileID: 3470208915340153838, guid: 3a2349da445a9ea47b08b7f911e652eb, type: 3}
-  fallSpeed: 9
+  fallSpeed: 4
   spawnInterval: 2.2
 --- !u!4 &1656145339
 Transform:

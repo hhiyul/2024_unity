@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 //정해둔 구간내에서 마음대로 움직이는 몬스터 ai
 public class new_move : MonoBehaviour
 {
+    public AudioClip kills;
     Rigidbody2D rigid;
     private int nextMove;
     private SpriteRenderer spriteRenderer;
@@ -108,6 +109,7 @@ public class new_move : MonoBehaviour
     }
     private void Die()
     {
+        AudioSource.PlayClipAtPoint(kills, transform.position);
         // 몹 사망 처리
         Destroy(gameObject);
     }

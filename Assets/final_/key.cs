@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class key : MonoBehaviour
 {
+    public AudioClip keys;
+
     public GameObject obstacle;    // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -20,7 +22,8 @@ public class key : MonoBehaviour
         // Player 태그를 가진 오브젝트와 충돌했을 때 게임오버로 가는 동작
         if (other.CompareTag("Player"))
         {
-            
+        
+            AudioSource.PlayClipAtPoint(keys, transform.position);
             Destroy(gameObject);
 
             if (obstacle != null)

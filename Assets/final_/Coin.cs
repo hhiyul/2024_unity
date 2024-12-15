@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class Coin : MonoBehaviour
 {
+    public AudioClip coins;
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
@@ -20,12 +20,13 @@ public class Coin : MonoBehaviour
         // 태그가 Player인 오브젝트와 충돌했을 때
         if (collision.CompareTag("Player"))
         {
+            AudioSource.PlayClipAtPoint(coins, transform.position);
             // ScoreManager에 점수 추가
             Scoremanager.instance.score += 10;
             Scoremanager.instance.UpdateScoreText();
 
             // 코인 오브젝트 파괴
-            Destroy(gameObject);
+            Destroy(gameObject);        
         }
     }
 }

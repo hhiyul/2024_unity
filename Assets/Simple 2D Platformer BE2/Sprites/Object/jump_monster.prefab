@@ -102,7 +102,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
+  kills: {fileID: 8300000, guid: 0aaa36f7a173be84b8b73904bcf65de0, type: 3}
   gameover: 
+  gameOverManager: {fileID: 0}
 --- !u!114 &3201675330037217098
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -115,6 +117,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eefceebee464f804db9aafb8142bcce6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  respawnTime: 2
+  enemyPrefab: {fileID: 0}
+  gameOverManager: {fileID: 0}
 --- !u!61 &6188949999551599804
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -193,4 +193,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df85dd3d480863c4db385676d36b0ea0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  kills: {fileID: 8300000, guid: 0aaa36f7a173be84b8b73904bcf65de0, type: 3}
   gameover: 
+  restrictedAreaMin: {x: -5, y: -5}
+  restrictedAreaMax: {x: 5, y: 5}
+  gameOverManager: {fileID: 0}
