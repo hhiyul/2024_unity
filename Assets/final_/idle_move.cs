@@ -8,21 +8,14 @@ public class char_move : MonoBehaviour
     
     private Vector3 startPosition;
     public Gameover_manager gameOverManager;
-    public string main;
-    public string gameover;
-
     Rigidbody2D rigid2D;
     Animator animator;
     float jumpForce = 170.0f;
-//  float walkForce = 10.0f;
     float maxWalkSpeed = 5.0f;
     
 
     public int maxJumpCount = 2;
     public int jumpCount = 0;
-    bool isInWall = false;
-    bool isGrounded = false;
-
     void Start()
     {
         this.rigid2D = GetComponent<Rigidbody2D>();

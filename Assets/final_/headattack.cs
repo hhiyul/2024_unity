@@ -5,9 +5,6 @@ using UnityEngine.SceneManagement;
 public class headattack : MonoBehaviour
 {
     // Start is called before the first frame update
-    public float respawnTime = 2f; // 몹이 재생성되는 시간
-    private Vector3 spawnPosition; // 몹의 초기 위치
-    public GameObject enemyPrefab;
     public Gameover_manager gameOverManager;
     void Start()
     {
@@ -25,7 +22,6 @@ public class headattack : MonoBehaviour
             if (other.transform.position.y > transform.position.y + 0.5f) 
             // 위에서 몹을 밟으면
             {
-                // 몹 처치
                 Die();
 
                 Rigidbody2D playerRb = other.gameObject.GetComponent<Rigidbody2D>();
@@ -34,6 +30,7 @@ public class headattack : MonoBehaviour
                 {
                     playerRb.velocity = new Vector2(playerRb.velocity.x, 5f); // 반발력추가
                 }
+                
                 char_move playerScript = other.gameObject.GetComponent<char_move>();
                 if (playerScript != null)
                 {
@@ -52,13 +49,7 @@ public class headattack : MonoBehaviour
     
     private void Die()
     {
-        // 몹 사망 처리
-        StartCoroutine(Respawn());
+        Destroy(gameObject);    
     }
-    private IEnumerator Respawn()
-    {
-        yield return new WaitForSeconds(respawnTime);
-
-       
-    }
+    
 }
