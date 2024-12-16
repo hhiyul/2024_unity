@@ -15,7 +15,7 @@ public class NewBehaviourScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(0, 0.04f, 0);
+        transform.Translate(0, 0.006f, 0);
 
         if(transform.position.y < -14)
         {
