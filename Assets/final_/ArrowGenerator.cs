@@ -8,7 +8,7 @@ public class ArrowGenerator : MonoBehaviour
     public float fallSpeed = 2.0f;
     private Rigidbody2D rb;
     public float spawnInterval;
-    float Randommax = 12;
+    float Randommax = 11;
     float Randommin = 2;
     void Start()
     {
@@ -34,7 +34,7 @@ public class ArrowGenerator : MonoBehaviour
     IEnumerator SpawnArrows()
     {
         spawnInterval = Random.Range(Randommin,Randommax);
-        yield return new WaitForSeconds(spawnInterval/2);
+        yield return new WaitForSeconds(spawnInterval/3);
         while (true)
         {
             yield return new WaitForSeconds(spawnInterval);
